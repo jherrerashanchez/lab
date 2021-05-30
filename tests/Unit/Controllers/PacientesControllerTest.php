@@ -13,6 +13,12 @@ class PacientesControllerTest extends TestCase {
     use DatabaseMigrations;
 
     /** @test */
+    public function a_estudios_view_can_see(){
+        $response = $this->get('/pacientes');
+        $response->assertViewIs('pacientes.pacientes_index');
+    }
+
+    /** @test */
     public function a_paciente_can_be_created() {
 
         $response = $this->post('/pacientes', [

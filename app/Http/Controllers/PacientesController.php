@@ -3,21 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paciente;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class PacientesController extends Controller {
 
-    private function testo() {
-
-
-        $a = 12312312;
-
-        dd($a);
-    }
-
     public function index() {
-        $this->testo();
         $pacientes = Paciente::get();
         return view('pacientes/pacientes_index', compact('pacientes'));
     }

@@ -10,9 +10,5 @@ class Estudio extends Model
     use HasFactory;
 
     protected $table = 'estudios';
-    protected $fillable = [
-        'clave',
-        'precio',
-        'nombre'
-    ];
+    protected $guarded = [];
 }
