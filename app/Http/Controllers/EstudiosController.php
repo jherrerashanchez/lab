@@ -17,6 +17,16 @@ class EstudiosController extends Controller{
         return redirect('/estudios');
     }
 
+    public function update(Estudio $estudio){
+        $estudio->update($this->validateRequest());
+        return redirect($estudio->path());
+    }
+
+    public function destroy(Estudio $estudio){
+        $estudio->delete();
+        return redirect('/estudios');
+    }
+
     public function validateRequest(){
         return request()->validate([
                 'clave' => 'required',

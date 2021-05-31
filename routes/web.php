@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ConsultasController;
 use App\Http\Controllers\EstudiosController;
+use App\Http\Controllers\EstudiosDetallesController;
 use App\Http\Controllers\PacientesController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,5 @@ Route::get('/', function () {
 });
 Route::resource('pacientes',PacientesController::class);
 Route::resource('estudios', EstudiosController::class);
+Route::resource('consultas',ConsultasController::class);
+Route::resource('estudios_detalles',EstudiosDetallesController::class);

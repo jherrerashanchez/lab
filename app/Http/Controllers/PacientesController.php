@@ -31,10 +31,11 @@ class PacientesController extends Controller {
 
     public function update(Paciente $paciente) {
         $paciente->update($this->validateRequest());
+        return redirect($paciente->path());
     }
 
-    public function destroy($id) {
-        // TODO: Implement destroy() method.
+    public function destroy(Paciente $paciente) {
+        $paciente->delete();
     }
 
     /**

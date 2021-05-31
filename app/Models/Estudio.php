@@ -9,6 +9,11 @@ class Estudio extends Model
 {
     use HasFactory;
 
+    public static $route = '/estudios';
     protected $table = 'estudios';
     protected $guarded = [];
+
+    public function path(){
+        return "/estudios/$this->id";
+    }
 }

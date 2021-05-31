@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paciente extends Model
+class Consulta extends Model
 {
     use HasFactory;
 
-    public static $route = '/pacientes';
-
-    protected $table = 'pacientes';
+    static $route= '/consultas';
     protected $guarded = [];
 
     public function path(){
-        return "pacientes/$this->id";
+        return "/consultas/$this->id";
+    }
+
+    public function estudiosDetalles(){
+        return $this->hasMany(EstudioDetalles::class);
     }
 }
